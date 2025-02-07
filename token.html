@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verifikasi Token</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #2b5876, #4e4376); /* Gradasi biru ke ungu */
+            color: white;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        h2 {
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            margin-top: 10px;
+            font-size: 16px;
+            text-align: center;
+            outline: none;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 12px;
+            width: 100%;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background: linear-gradient(135deg, #1e3c72, #2a5298); /* Gradasi biru */
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(46, 94, 183, 0.5);
+        }
+
+        .error {
+            margin-top: 10px;
+            color: #ff4757;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Masukkan Token Anda</h2>
+        <input type="text" id="token" placeholder="Masukkan token..." autocomplete="off">
+        <button onclick="cekToken()">Lanjut</button>
+        <p id="error" class="error"></p>
+    </div>
+
+    <script>
+        function cekToken() {
+            var tokenInput = document.getElementById("token").value;
+            var tokenBenar = "123085"; // Ganti dengan token yang diinginkan
+            var errorText = document.getElementById("error");
+
+            if (tokenInput === tokenBenar) {
+                window.location.href = "https://yokoto-saib.github.io/FYnixor-/"; // Ganti dengan URL tujuan
+            } else {
+                errorText.textContent = "Token salah, coba lagi!";
+            }
+        }
+    </script>
+
+</body>
+</html>
